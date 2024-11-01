@@ -28,6 +28,9 @@ export default function Homepage(){
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+    <button onClick={() => window.location.href = '/courses'}>
+      Go to Courses
+    </button>
     </>
   )
 }
