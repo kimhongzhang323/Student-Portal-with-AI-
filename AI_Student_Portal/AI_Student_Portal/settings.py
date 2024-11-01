@@ -121,3 +121,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'your_database_name',
+        'ENFORCE_SCHEMA': False,  # Set to True if you want schema validation
+        'CLIENT': {
+            'host': 'mongodb://localhost:27017',  # e.g., 'mongodb://localhost:27017'
+            'username': 'studentportal_ai',  # Your MongoDB username
+            'password': 'studentportal123',
+            'authSource': 'admin',  # Database where user credentials are stored
+            'authMechanism': 'SCRAM-SHA-256',
+        }
+    }
+}
