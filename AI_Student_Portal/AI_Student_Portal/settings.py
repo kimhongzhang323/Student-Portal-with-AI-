@@ -136,3 +136,6 @@ DATABASES = {
         }
     }
 }
+
+# settings.py
+GEMINI_API_KEY = 'AIzaSyDD0546soE4dGDrG7FMTQz_ieAO9mSB-7k'
