@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import {Button} from "@/components/ui/button"
 
 export default function Homepage(){
     const [count, setCount] = useState(0)
@@ -28,9 +29,9 @@ export default function Homepage(){
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    <button onClick={() => window.location.href = '/courses'}>
-      Go to Courses
-    </button>
+      <Button onClick={() => window.location.href = '/courses'} colorPalette = "red">
+        Go to Courses
+      </Button>
     </>
   )
 }
