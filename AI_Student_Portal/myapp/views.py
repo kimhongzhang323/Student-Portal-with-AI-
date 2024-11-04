@@ -6,6 +6,11 @@ GEMINI_API_KEY = settings.GEMINI_API_KEY
 from myapp.models import ChatMessage
 import google.generativeai as genai
 
+def index(request):
+
+    return render(request, 'index.html')
+
+
 def send_message(request):
     # Check if the request method is POST
     if request.method == 'POST':
