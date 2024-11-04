@@ -10,10 +10,9 @@ export default function Login(){
             <Container fluid='true' centerContent='true' className='loginPrompt'>
                 <div style={{ display: 'flex', alignItems: 'center',overflow:'auto',flexWrap:'wrap',justifyContent:'center',margin:'0', padding:'0'}}>
                     <img src="/logo.svg" alt="logo" className='logo' />
-                    <Heading size='2xl' >Login</Heading>
                 </div>
                 <form>
-                    <Field.Root style={{ margin: '10px auto' }}>
+                    {/* <Field.Root style={{ margin: '10px auto' }}>
                         <Box pos="relative" w="full">
                             <Input type='text' className='peer' placeholder='' />
                             <Field.Label css={floatingStyles}>Username</Field.Label>
@@ -24,7 +23,7 @@ export default function Login(){
                             <Input type='password' className='peer' placeholder='' />
                             <Field.Label css={floatingStyles}>Password</Field.Label>
                         </Box>
-                    </Field.Root>
+                    </Field.Root> */}
                     <Button  colorPalette='gray' type='submit' variant={'outline'} className='hoverButton'>
                         Log in with
                         <img src="/googletext.svg" alt="google" className='googleTextLogo' style={{width:'50%',height:'50%',paddingTop:'3px'}}/>
