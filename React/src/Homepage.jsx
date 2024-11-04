@@ -15,6 +15,9 @@ export default function Homepage(){
       <Button onClick={() => window.location.href = '/courses'} colorPalette = "red">
         Go to Courses
       </Button>
+      <Button onClick={() => window.location.href = '/login'} colorPalette = "blue">
+        Login
+      </Button>
     </>
   )
 }
