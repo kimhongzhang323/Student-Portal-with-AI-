@@ -4,18 +4,22 @@
     align-items: center;
     justify-content: center;
     height: 100%; /* Full height of the viewport */
+    background-color:black;
+    width: 100%;
+    min-width: fit-content;
 }
 
 /* Child element */
 .loginPrompt {
     background-color: white;
     border-radius: 10px;
-    padding: 5% 20px;
+    padding: 1% 10px;
     color: black;
     width: fit-content;
     height: fit-content;
     justify-content: center;
     align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .hoverButton{
@@ -29,8 +33,15 @@
 
 .hoverButton:hover{
     color:white;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .logo:hover{
     filter: none;
+}
+
+.loginInputs{
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
 }
