@@ -6,7 +6,7 @@ import "./styles.css";
 
 export default function Login(){
     return(
-        <div className='parentContainer'>
+        <div className='parentContainer' style={{backgroundImage: 'url(/googlelogo.svg)'}}>
             <Container fluid='true' centerContent='true' className='loginPrompt'>
                 <div style={{ display: 'flex', alignItems: 'center',overflow:'auto',flexWrap:'wrap',justifyContent:'center',margin:'0', padding:'0'}}>
                     <img src="/logo.svg" alt="logo" className='logo' />
