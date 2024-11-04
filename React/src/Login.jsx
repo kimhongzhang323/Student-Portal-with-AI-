@@ -1,5 +1,5 @@
 
-import {Field,Box,Container,Input,defineStyle,Button } from '@chakra-ui/react';
+import {Field,Box,Container,Input,defineStyle,Button,Heading } from '@chakra-ui/react';
 import "./styles.css";
 
 
@@ -8,7 +8,7 @@ export default function Login(){
     return(
         <div className='parentContainer'>
             <Container  fluid= 'true' centerContent = 'true' className='loginPrompt'>
-                <h1>Login</h1>
+                <Heading size='2xl'>Login</Heading>
                 <form>
                     <Field.Root style={{margin:'10px'}}>
                         <Box pos="relative" w="full">
