@@ -10,13 +10,13 @@ export default function Login(){
                 <form>
                     <label>
                         Username:
-                        <input type="text" name="username" />
                     </label>
+                    <input type="text" name="username" />
                     <br />
                     <label>
                         Password:
-                        <input type="password" name="password" />
                     </label>
+                    <input type="password" name="password" />
                     <br />
                     <button type="submit">Submit</button>
                 </form>
