@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
+from django.http import JsonResponse
 
 # Get the API key for Gemini AI from Django settings
 GEMINI_API_KEY = settings.GEMINI_API_KEY
@@ -31,3 +32,14 @@ def list_messages(request):
     
     # Render the list_messages template with the retrieved messages
     return render(request, 'chatbot/list_messages.html', { 'messages': messages })
+
+
+def test_route1(request):
+    return JsonResponse({'message': 'Hello, World!'})
+
+
+def test_route2(request):
+    return JsonResponse({'message': 'Hello, Django!'})
+
+def test_route3(request):
+    return JsonResponse({'message': 'Hello, AI!'})
