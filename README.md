@@ -1,15 +1,15 @@
-# Django Firebase Integration Project
+# Django React Integration Project
 
-This project is a Django web application that integrates with Firebase for authentication and database management.
+This project is a Django web application that integrates with React for the frontend and PostgreSQL for database management.
 
 ## Table of Contents
 
-- [Django Firebase Integration Project](#django-firebase-integration-project)
+- [Django React Integration Project](#django-react-integration-project)
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Environment Variables](#environment-variables)
-  - [Firebase Setup](#firebase-setup)
+  - [PostgreSQL Setup](#postgresql-setup)
   - [Running the Project](#running-the-project)
   - [Contributing](#contributing)
   - [License](#license)
@@ -19,7 +19,9 @@ This project is a Django web application that integrates with Firebase for authe
 
 - Python 3.8 or higher
 - Django 3.2 or higher
-- Firebase account
+- Node.js and npm
+- PostgreSQL database
+- PostgreSQL account
 
 ## Installation
 
@@ -37,10 +39,17 @@ This project is a Django web application that integrates with Firebase for authe
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
-3. Install the required packages:
+3. Install the required Python packages:
 
    ```bash
    pip install -r requirements.txt
+   ```
+
+4. Navigate to the React frontend directory and install the required packages:
+
+   ```bash
+   cd frontend  # Assuming the React app is in a directory named 'frontend'
+   npm install
    ```
 
 ## Environment Variables
@@ -56,10 +65,14 @@ To keep sensitive information secure, you will need to set up environment variab
 2. Add the following lines to the `.env` file:
 
    ```plaintext
-   FIREBASE_CREDENTIALS=/path/to/your/serviceAccountKey.json
+   DB_NAME='your_db_name'
+   DB_USER='your_db_user'
+   DB_PASSWORD='your_db_password'
+   DB_HOST='localhost'
+   DB_PORT='5432'
    ```
 
-   Replace `/path/to/your/serviceAccountKey.json` with the actual path to your Firebase service account key file.
+   Replace the placeholders with your actual PostgreSQL credentials.
 
 3. Make sure to add `.env` to your `.gitignore` file to prevent it from being committed:
 
@@ -68,13 +81,21 @@ To keep sensitive information secure, you will need to set up environment variab
    .env
    ```
 
-## Firebase Setup
+## PostgreSQL Setup
 
-1. Go to the [Firebase Console](https://console.firebase.google.com/).
-2. Create a new project or use an existing one.
-3. In the Project Settings, navigate to the Service Accounts tab.
-4. Click on "Generate New Private Key" to download the service account JSON file.
-5. Securely share this file with your team members who need access.
+1. Install PostgreSQL on your machine if it's not already installed.
+2. Create a new PostgreSQL database for the project:
+
+   ```sql
+   CREATE DATABASE your_db_name;
+   ```
+
+3. Create a user for the database with appropriate permissions:
+
+   ```sql
+   CREATE USER your_db_user WITH PASSWORD 'your_db_password';
+   GRANT ALL PRIVILEGES ON DATABASE your_db_name TO your_db_user;
+   ```
 
 ## Running the Project
 
@@ -91,7 +112,13 @@ To keep sensitive information secure, you will need to set up environment variab
    python manage.py runserver
    ```
 
-4. Open your web browser and navigate to `http://127.0.0.1:8000/`.
+4. Open a new terminal window, navigate to the React frontend directory, and start the React development server:
+
+   ```bash
+   npm start
+   ```
+
+5. Open your web browser and navigate to `http://127.0.0.1:3000/` for the React frontend.
 
 ## Contributing
 
@@ -120,12 +147,11 @@ To keep sensitive information secure, you will need to set up environment variab
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-```
-
 ### Customization
 
-- Replace placeholders like `https://github.com/yourusername/your-repo.git` and `/path/to/your/serviceAccountKey.json` with actual URLs and paths.
+- Replace placeholders like `https://github.com/yourusername/your-repo.git` with actual URLs.
 - Add any additional setup instructions or project-specific information relevant to your team.
 - Adjust any sections based on your project's specific needs or features.
+```
 
-Feel free to ask if you need any changes or additional sections in the README!
+Feel free to adjust any specific sections to better fit your project requirements! If you need further changes or additions, just let me know!
