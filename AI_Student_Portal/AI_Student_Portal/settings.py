@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -122,17 +124,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'your_database_name',
-        'ENFORCE_SCHEMA': False,  # Set to True if you want schema validation
-        'CLIENT': {
-            'host': 'mongodb://localhost:27017',  # e.g., 'mongodb://localhost:27017'
-            'username': 'studentportal_ai',  # Your MongoDB username
-            'password': 'studentportal123',
-            'authSource': 'admin',  # Database where user credentials are stored
-            'authMechanism': 'SCRAM-SHA-256',
-        }
-    }
-}
+# settings.py
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
