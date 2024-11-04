@@ -1,0 +1,10 @@
+.loginPrompt{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    color: black;
+    width: 50%;
+    height: 60%;
+    align-items: center;
+    justify-content: center;
+}
