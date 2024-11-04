@@ -27,4 +27,5 @@ built-in-ai-challenge-firebase-adminsdk-5bv8p-0564c52214.json
 ./React/*.njsproj
 ./React/*.sln
 ./React/*.sw?
+package-lock.json
 node_modules
