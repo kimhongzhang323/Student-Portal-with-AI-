@@ -6,6 +6,10 @@ from django.http import JsonResponse
 GEMINI_API_KEY = settings.GEMINI_API_KEY
 from myapp.models import ChatMessage
 import google.generativeai as genai
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth import authenticate
 
 def index(request):
 
@@ -48,3 +52,17 @@ def test_route2(request):
 
 def test_route3(request):
     return JsonResponse({'message': 'Hello, AI!'})
+
+@api_view(['POST'])
+def login_view(request):
+    username = request.data.get("username")
+    password = request.data.get("password")
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        refresh = RefreshToken.for_user(user)
+        return Response({
+            'refresh': str(refresh),
+            'access': str(refresh.access_token),
+        })
+    else:
+        return Response({"error": "Invalid credentials"}, status=400)
