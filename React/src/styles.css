@@ -30,3 +30,7 @@
 .hoverButton:hover{
     color:white;
 }
+
+.logo:hover{
+    filter: none;
+}
