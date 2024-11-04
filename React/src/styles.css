@@ -1,10 +1,19 @@
-.loginPrompt{
+/* Parent container */
+.parentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Child element */
+.loginPrompt {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
     color: black;
     width: 50%;
-    height: 60%;
-    align-items: center;
+    height: 50%;
     justify-content: center;
+    align-items: center;
 }
