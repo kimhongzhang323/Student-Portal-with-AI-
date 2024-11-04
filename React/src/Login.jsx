@@ -6,12 +6,12 @@ import "./styles.css";
 
 export default function Login(){
     return(
-        <div className='parentContainer' style={{backgroundImage: 'url(/googlelogo.svg)'}}>
+        <div className='parentContainer'>
             <Container fluid='true' centerContent='true' className='loginPrompt'>
                 <div style={{ display: 'flex', alignItems: 'center',overflow:'auto',flexWrap:'wrap',justifyContent:'center',margin:'0', padding:'0'}}>
                     <img src="/logo.svg" alt="logo" className='logo' />
                 </div>
-                <form>
+                <form style={{width:'100%'}}>
                     {/* <Field.Root style={{ margin: '10px auto' }}>
                         <Box pos="relative" w="full">
                             <Input type='text' className='peer' placeholder='' />
@@ -24,9 +24,16 @@ export default function Login(){
                             <Field.Label css={floatingStyles}>Password</Field.Label>
                         </Box>
                     </Field.Root> */}
-                    <Button  colorPalette='gray' type='submit' variant={'outline'} className='hoverButton'>
-                        Log in with
-                        <img src="/googletext.svg" alt="google" className='googleTextLogo' style={{width:'50%',height:'50%',paddingTop:'3px'}}/>
+                    <div className='loginInputs' style={{width:'100%'}}>
+                        <Input type='text' placeholder='Username' style={{margin:'10px auto',width:'70%'}}/>
+                        <Input type='password' placeholder='Password' style={{width:'70%'}}/>
+                    </div>
+                    <div style={{display:'flex',alignItems:'center',width:'80%',margin:'10px auto'}}>
+                        <p style={{fontSize:'0.8rem',fontWeight:'bolder',color:'rgba(0,0,0,0.5'}}> Or continue with</p>
+                        <div style={{width:'60%',borderBottom:'1px solid rgba(0,0,0,0.3)',marginLeft:'3%'}}></div>
+                    </div>
+                    <Button  colorPalette='gray' type='submit' variant={'outline'} className='hoverButton' style={{borderRadius:'30px',padding:'0'}}> 
+                        <img src="/googlelogo.svg" alt="google" className='googleTextLogo' style={{width:'100%',height:'100%',margin:'0',padding:'0'}}/>
                     </Button>
                 </form>
             </Container>
@@ -34,24 +41,24 @@ export default function Login(){
     )
 };
 
-const floatingStyles = defineStyle({
-    pos: "absolute",
-    bg: "bg",
-    px: "0.5",
-    top: "-3",
-    backgroundColor: "transparent",
-    insetStart: "2",
-    fontWeight: "normal",
-    pointerEvents: "none",
-    transition: "position",
-    _peerPlaceholderShown: {
-      color: "fg.muted",
-      top: "2.5",
-      insetStart: "3",
-    },
-    _peerFocusVisible: {
-      color: "gray",
-      top: "-3",
-      insetStart: "2",
-    },
-});
+// const floatingStyles = defineStyle({
+//     pos: "absolute",
+//     bg: "bg",
+//     px: "0.5",
+//     top: "-3",
+//     backgroundColor: "transparent",
+//     insetStart: "2",
+//     fontWeight: "normal",
+//     pointerEvents: "none",
+//     transition: "position",
+//     _peerPlaceholderShown: {
+//       color: "fg.muted",
+//       top: "2.5",
+//       insetStart: "3",
+//     },
+//     _peerFocusVisible: {
+//       color: "gray",
+//       top: "-3",
+//       insetStart: "2",
+//     },
+// });
