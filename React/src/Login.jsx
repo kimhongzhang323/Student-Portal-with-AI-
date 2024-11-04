@@ -7,18 +7,21 @@ import "./styles.css";
 export default function Login(){
     return(
         <div className='parentContainer'>
-            <Container  fluid= 'true' centerContent = 'true' className='loginPrompt'>
-                <Heading size='2xl'>Login</Heading>
+            <Container fluid='true' centerContent='true' className='loginPrompt'>
+                <div style={{ display: 'flex', alignItems: 'center',overflow:'auto',flexWrap:'wrap',justifyContent:'center',margin:'0', padding:'0'}}>
+                    <img src="../public/logo.svg" alt="logo" className='logo' />
+                    <Heading size='2xl' >Login</Heading>
+                </div>
                 <form>
-                    <Field.Root style={{margin:'10px'}}>
+                    <Field.Root style={{ margin: '10px auto' }}>
                         <Box pos="relative" w="full">
                             <Input type='text' className='peer' placeholder='' />
                             <Field.Label css={floatingStyles}>Username</Field.Label>
                         </Box>
                     </Field.Root>
-                    <Field.Root style={{margin:'10px'}}>
+                    <Field.Root style={{ margin: '10px auto' }}>
                         <Box pos="relative" w="full">
-                            <Input  type='password' className='peer' placeholder='' />
+                            <Input type='password' className='peer' placeholder='' />
                             <Field.Label css={floatingStyles}>Password</Field.Label>
                         </Box>
                     </Field.Root>
