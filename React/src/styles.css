@@ -43,5 +43,11 @@
 .loginInputs{
     justify-content: center;
     align-items: center;
-    width: fit-content;
+}
+
+.centeredContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:10px auto;
 }
