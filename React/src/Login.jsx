@@ -12,7 +12,7 @@ export default function Login(){
     return(
         <div className='parentContainer'>
             <Container fluid='true' centerContent='true' className='loginPrompt'>
-                <div style={{ display: 'flex', alignItems: 'center',overflow:'auto',flexWrap:'wrap',justifyContent:'center',margin:'0', padding:'0'}}>
+                <div style={{ overflow:'auto',flexWrap:'wrap', padding:'0',margin:'0'}} className='centeredContainer'>
                     <img src="/logo.svg" alt="logo" className='logo' />
                 </div>
                 <form style={{width:'100%'}}>
@@ -30,11 +30,11 @@ export default function Login(){
                     </Field.Root> */}
                     <div className='loginInputs' style={{width:'100%'}}>
                         <Input type='text' placeholder='Username' style={{margin:'10px auto',width:'70%'}}/>
-                        <div style={{width:'70%',justifyContent:'center',display:'flex',alignItems:'center',margin:'10px auto'}}>
+                        <div className='centeredContainer' style={{width:'70%'}}>
                             <PasswordInput style={{margin:'auto'}} placeholder="Password" />
                         </div>      
                     </div>
-                    <div style={{display:'flex',alignItems:'center',width:'100%',margin:'10px auto'}}>
+                    <div className='centeredContainer'>
                         <p style={{fontSize:'0.8rem',fontWeight:'bolder',color:'rgba(0,0,0,0.5'}}> Or continue with</p>
                         <div style={{width:'60%',borderBottom:'1px solid rgba(0,0,0,0.3)',marginLeft:'3%'}}></div>
                     </div>
