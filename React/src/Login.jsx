@@ -1,6 +1,10 @@
 
 import {Field,Box,Container,Input,defineStyle,Button,Heading } from '@chakra-ui/react';
 import "./styles.css";
+import {
+    PasswordInput,
+    PasswordStrengthMeter,
+  } from "@/components/ui/password-input";
 
 
 
@@ -26,7 +30,9 @@ export default function Login(){
                     </Field.Root> */}
                     <div className='loginInputs' style={{width:'100%'}}>
                         <Input type='text' placeholder='Username' style={{margin:'10px auto',width:'70%'}}/>
-                        <Input type='password' placeholder='Password' style={{width:'70%'}}/>
+                        <div style={{width:'70%',justifyContent:'center',display:'flex',alignItems:'center',margin:'10px auto'}}>
+                            <PasswordInput style={{margin:'auto'}} placeholder="Password" />
+                        </div>      
                     </div>
                     <div style={{display:'flex',alignItems:'center',width:'80%',margin:'10px auto'}}>
                         <p style={{fontSize:'0.8rem',fontWeight:'bolder',color:'rgba(0,0,0,0.5'}}> Or continue with</p>
@@ -35,6 +41,7 @@ export default function Login(){
                     <Button  colorPalette='gray' type='submit' variant={'outline'} className='hoverButton' style={{borderRadius:'30px',padding:'0'}}> 
                         <img src="/googlelogo.svg" alt="google" className='googleTextLogo' style={{width:'100%',height:'100%',margin:'0',padding:'0'}}/>
                     </Button>
+                    
                 </form>
             </Container>
         </div>
