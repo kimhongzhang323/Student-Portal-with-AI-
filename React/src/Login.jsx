@@ -34,7 +34,7 @@ export default function Login(){
                             <PasswordInput style={{margin:'auto'}} placeholder="Password" />
                         </div>      
                     </div>
-                    <div style={{display:'flex',alignItems:'center',width:'80%',margin:'10px auto'}}>
+                    <div style={{display:'flex',alignItems:'center',width:'100%',margin:'10px auto'}}>
                         <p style={{fontSize:'0.8rem',fontWeight:'bolder',color:'rgba(0,0,0,0.5'}}> Or continue with</p>
                         <div style={{width:'60%',borderBottom:'1px solid rgba(0,0,0,0.3)',marginLeft:'3%'}}></div>
                     </div>
