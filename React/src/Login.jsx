@@ -39,7 +39,7 @@ export default function Login(){
                                 </a>
                             </div>
                             <div className='centeredContainer' style={{width:'100%',margin:'5px auto'}}>
-                                <PasswordInput style={{margin:'0 auto'}}/>
+                                <PasswordInput style={{margin:'0 auto',background:'transparent'}}/>
                                 
                             </div>
                         </div>     
