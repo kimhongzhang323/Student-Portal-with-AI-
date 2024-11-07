@@ -44,7 +44,7 @@ export default function Login(){
                             </div>
                         </div>     
                     </div>
-                    <Button variant='subtle' type='submit' style={{width:'90%'}}>
+                    <Button variant='subtle' type='submit' style={{width:'90%'}} className='blackButton'>
                         Log In
                     </Button>
                 </form>
