@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh; /* Full height of the viewport */
-    background-color:black;
+    background-color:rgba(107, 107, 107, 0.534);
     width: 100%;
     min-width: fit-content;
     color: white;
