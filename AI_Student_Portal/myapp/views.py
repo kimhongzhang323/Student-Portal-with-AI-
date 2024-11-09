@@ -12,8 +12,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
 
 def index(request):
-
-    return render(request, 'index.html')
+    return JsonResponse({'message': 'Hello, World!','header':'Welcome to AI Student Portal'})
+    # return render(request, 'index.html')
 
 
 def send_message(request):
@@ -66,3 +66,7 @@ def login_view(request):
         })
     else:
         return Response({"error": "Invalid credentials"}, status=400)
+    
+def random(request):
+    print("Random route called")
+    return JsonResponse({'message': 'Hello, Random!','header':'Welcome to AI Student Portal'})
