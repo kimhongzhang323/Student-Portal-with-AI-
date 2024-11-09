@@ -25,11 +25,6 @@ export default function Homepage() {
       console.error('Error fetching data:', error);
     }
   };
-  function fetchData(){
-      useEffect(() => {
-        getSomething(); // Fetch data when the component mounts
-      }, []); // Empty dependency array ensures this runs once when the component mounts
-  }
 
   
   return (
@@ -78,7 +73,7 @@ export default function Homepage() {
       </SimpleGrid>
       
     </Box>
-    <Button onClick={fetchData}>
+    <Button onClick={getSomething}>
       Get something
     </Button>
     <p>
