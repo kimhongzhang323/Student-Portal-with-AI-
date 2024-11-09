@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import  login_view
+from myapp.views import test_route1, test_route2, test_route3, login_view,random
 from myapp import views  # Replace 'my_app' with the actual app name
 
 urlpatterns = [
     path('', views.homepage, name='homepage'),
     path('admin/', admin.site.urls),
     path('api/login/', login_view, name='login'),
+    path('random/', views.random, name='random'),
 
 ]
