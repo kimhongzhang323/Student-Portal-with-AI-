@@ -26,6 +26,6 @@ urlpatterns = [
     path('test2/', test_route2),
     path('test3/', test_route3),
     path('api/login/', login_view, name='login'),
-    path('random/', random, name='random'),
+    path('random/', views.random, name='random'),
 
 ]

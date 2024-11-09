@@ -18,17 +18,19 @@ export default function Homepage() {
 
   const getSomething = async () => {
     try {
-      const response = await fetch('/api/'); // Replace with your API endpoint
+      const response = await fetch('/api/random/'); // Replace with your API endpoint
       const result = await response.json();
       setData(JSON.stringify(result));
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
+  function fetchData(){
+      useEffect(() => {
+        getSomething(); // Fetch data when the component mounts
+      }, []); // Empty dependency array ensures this runs once when the component mounts
+  }
 
-  useEffect(() => {
-    getSomething(); // Fetch data when the component mounts
-  }, []); // Empty dependency array ensures this runs once when the component mounts
   
   return (
     <>
@@ -76,7 +78,7 @@ export default function Homepage() {
       </SimpleGrid>
       
     </Box>
-    <Button onClick={getSomething}>
+    <Button onClick={fetchData}>
       Get something
     </Button>
     <p>

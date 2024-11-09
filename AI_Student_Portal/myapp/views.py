@@ -14,7 +14,10 @@ from django.contrib.auth import authenticate
 def index(request):
     return JsonResponse({'message': 'Hello, World!','header':'Welcome to AI Student Portal'})
     # return render(request, 'index.html')
-
+    
+def random(request):
+    print("Random route called")
+    return JsonResponse({'message': 'Hello, World!','header':'Welcome to AI Student Portal'})
 
 def send_message(request):
     # Check if the request method is POST
@@ -67,6 +70,3 @@ def login_view(request):
     else:
         return Response({"error": "Invalid credentials"}, status=400)
     
-def random(request):
-    print("Random route called")
-    return JsonResponse({'message': 'Hello, Random!','header':'Welcome to AI Student Portal'})
