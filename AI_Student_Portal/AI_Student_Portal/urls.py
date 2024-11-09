@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from myapp.views import test_route1, test_route2, test_route3, login_view
 from myapp import views  # Replace 'my_app' with the actual app name
+from rest_framework_simplejwt import TokenRefreshView
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -25,6 +26,7 @@ urlpatterns = [
     path('test1/', test_route1),
     path('test2/', test_route2),
     path('test3/', test_route3),
-    path('api/login/', login_view, name='login'),
+    path('register/', views.RegisterView.as_)
+    
 
 ]

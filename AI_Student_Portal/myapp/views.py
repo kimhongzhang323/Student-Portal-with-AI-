@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
+from rest_framework import serializers
 from django.conf import settings
 from django.http import JsonResponse
 
@@ -9,6 +12,7 @@ import google.generativeai as genai
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework import status
 from django.contrib.auth import authenticate
 
 def index(request):
@@ -55,14 +59,13 @@ def test_route3(request):
 
 @api_view(['POST'])
 def login_view(request):
-    username = request.data.get("username")
-    password = request.data.get("password")
-    user = authenticate(username=username, password=password)
-    if user is not None:
+    username = request.data.get('username')
+    password = request.data.get('password')
+    user = User.objects.filter(username=username).first()
+    if user and user.check_password(password):
         refresh = RefreshToken.for_user(user)
         return Response({
-            'refresh': str(refresh),
-            'access': str(refresh.access_token),
+            "refresh": str(refresh),
+            "access": str(refresh.access_token),
         })
-    else:
-        return Response({"error": "Invalid credentials"}, status=400)
+    return Response({'error': 'Invalid password'}, status=status.HTTP_401_UNAUTHORIZED)
