@@ -26,7 +26,11 @@ urlpatterns = [
     path('test1/', test_route1),
     path('test2/', test_route2),
     path('test3/', test_route3),
-    path('register/', views.RegisterView.as_)
+    path('register/', views.RegisterView.as_),
+    path('signup/', views.signup, name='signup'),
+    path('verify/', views.verify_code, name='verify_code'),
+    path('logout/', views.logout_view, name='logout'),
+    path('api/logout/', views.api_logout_view, name='api_logout'),
     
 
 ]
