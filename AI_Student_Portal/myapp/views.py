@@ -46,15 +46,8 @@ def list_messages(request):
     return render(request, 'chatbot/list_messages.html', { 'messages': messages })
 
 
-def test_route1(request):
-    return JsonResponse({'message': 'Hello, World!'})
-
-
-def test_route2(request):
-    return JsonResponse({'message': 'Hello, Django!'})
-
-def test_route3(request):
-    return JsonResponse({'message': 'Hello, AI!'})
+def homepage(request):
+    return render(request, 'index.html')
 
 @api_view(['POST'])
 def login_view(request):

@@ -20,11 +20,8 @@ from myapp.views import test_route1, test_route2, test_route3, login_view,random
 from myapp import views  # Replace 'my_app' with the actual app name
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.homepage, name='homepage'),
     path('admin/', admin.site.urls),
-    path('test1/', test_route1),
-    path('test2/', test_route2),
-    path('test3/', test_route3),
     path('api/login/', login_view, name='login'),
     path('random/', views.random, name='random'),
 
