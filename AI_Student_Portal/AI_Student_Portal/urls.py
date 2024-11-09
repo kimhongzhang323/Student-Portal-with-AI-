@@ -16,21 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import test_route1, test_route2, test_route3, login_view
+from myapp.views import test_route1, test_route2, test_route3, login_view,random
 from myapp import views  # Replace 'my_app' with the actual app name
 from rest_framework_simplejwt import TokenRefreshView
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.homepage, name='homepage'),
     path('admin/', admin.site.urls),
-    path('test1/', test_route1),
-    path('test2/', test_route2),
-    path('test3/', test_route3),
     path('register/', views.RegisterView.as_),
     path('signup/', views.signup, name='signup'),
     path('verify/', views.verify_code, name='verify_code'),
     path('logout/', views.logout_view, name='logout'),
     path('api/logout/', views.api_logout_view, name='api_logout'),
     
+    path('random/', views.random, name='random'),
 
 ]

@@ -12,9 +12,21 @@ import AssignmentComponent from './components/Assignment'
 import EnrolledComponent from './components/Enrolled'
 import EnrolledLogo from './assets/courses.svg'
 import AssignmentLogo from './assets/assignments.svg'
-
+import { useEffect,useState } from 'react'
 export default function Homepage() {
+  const [data, setData] = useState(null);
 
+  const getSomething = async () => {
+    try {
+      const response = await fetch('/api/random/'); // Replace with your API endpoint
+      const result = await response.json();
+      setData(JSON.stringify(result));
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  
   return (
     <>
     <NavigationBar />
@@ -61,7 +73,12 @@ export default function Homepage() {
       </SimpleGrid>
       
     </Box>
-    
+    <Button onClick={getSomething}>
+      Get something
+    </Button>
+    <p>
+      {data ? data : 'Loading...'}
+    </p>
     </>
   )
 }

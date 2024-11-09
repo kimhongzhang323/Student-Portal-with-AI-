@@ -30,6 +30,12 @@ GEMINI_API_KEY = settings.GEMINI_API_KEY
 def index(request):
     return render(request, 'index.html')
 
+    return JsonResponse({'message': 'Hello, World!','header':'Welcome to AI Student Portal'})
+    # return render(request, 'index.html')
+    
+def random(request):
+    print("Random route called")
+    return JsonResponse({'message': 'Hello, World!','header':'Welcome to AI Student Portal'})
 
 def send_message(request):
     if request.method == 'POST':
@@ -56,6 +62,11 @@ def list_messages(request):
     return render(request, 'chatbot/list_messages.html', {'messages': messages})
 
 
+<<<<<<< HEAD
+=======
+def homepage(request):
+    return render(request, 'index.html')
+>>>>>>> 0c51094cb1aede681dc2b91eec7bcb76549da5eb
 
 @api_view(['POST'])
 def login_view(request):
@@ -68,6 +79,7 @@ def login_view(request):
             "refresh": str(refresh),
             "access": str(refresh.access_token),
         })
+<<<<<<< HEAD
     return Response({'error': 'Invalid password'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
@@ -135,3 +147,8 @@ def api_logout_view(request):
     """
     logout(request)
     return JsonResponse({'message': 'Logged out successfully'}, status=200)
+=======
+    else:
+        return Response({"error": "Invalid credentials"}, status=400)
+    
+>>>>>>> 0c51094cb1aede681dc2b91eec7bcb76549da5eb

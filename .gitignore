@@ -2,6 +2,7 @@
 built-in-ai-challenge-firebase-adminsdk-5bv8p-0564c52214.json
 AI_Student_Portal/AI_Student_Portal/__pycache__
 .env
+AI_Student_Portal/env
 ./node_modules
 AI_Student_Portal/myapp/__pycache__
 AI_Student_Portal/myapp/migrations/__pycache__
