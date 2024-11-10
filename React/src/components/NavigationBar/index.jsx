@@ -5,7 +5,6 @@ import BellLogo from '../../assets/bell.svg'
 import MyPortalLogo from '../../assets/MyPortal.svg'
 import { Avatar } from '../ui/avatar'
 import { OverlaySidebar } from '../OverlaySidebarv2'
-// import { OverlaySidebarv2 } from './OverlaySidebarv2'
 
 export function NavigationBar() {
     return (
