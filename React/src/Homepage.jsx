@@ -18,7 +18,7 @@ export default function Homepage() {
   };
 
   return (
-    <>
+    <div style={{backgroundColor:'white'}}>
      <NavigationLayout>
         <Heading textAlign={"start"} size={"2xl"}>Welcome back, Choong Jia Xuen!</Heading>
         <Heading marginTop={"10"} marginBottom={"3"} textAlign={"start"}>
@@ -61,6 +61,6 @@ export default function Homepage() {
           <AssignmentComponent/>
         </SimpleGrid>
        </NavigationLayout>
-    </>
+    </div>
   )
 }
