@@ -16,9 +16,9 @@ from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
-
+from django.http import HttpResponse
 from myapp.models import ChatMessage, User
-from myapp.tokens import email_verification_token
+from myapp.tokens import EmailTokenGenerator
 import random
 import google.generativeai as genai
 
@@ -27,15 +27,8 @@ import google.generativeai as genai
 GEMINI_API_KEY = settings.GEMINI_API_KEY
 
 
-def index(request):
-    return render(request, 'index.html')
-
-    return JsonResponse({'message': 'Hello, World!','header':'Welcome to AI Student Portal'})
-    # return render(request, 'index.html')
-    
 def random(request):
-    print("Random route called")
-    return JsonResponse({'message': 'Hello, World!','header':'Welcome to AI Student Portal'})
+    return HttpResponse("This is a random view.")
 
 def send_message(request):
     if request.method == 'POST':
@@ -143,3 +136,4 @@ def api_logout_view(request):
     """
     logout(request)
     return JsonResponse({'message': 'Logged out successfully'}, status=200)
+    
