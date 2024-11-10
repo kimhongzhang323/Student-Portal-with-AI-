@@ -1,10 +1,11 @@
 // import './App.css'
-import { Box, HStack, Spacer } from '@chakra-ui/react'
+import { Box, HStack, Image, Spacer } from '@chakra-ui/react'
 import MessageLogo from '../../assets/message.svg'
 import BellLogo from '../../assets/bell.svg'
 import MyPortalLogo from '../../assets/MyPortal.svg'
-import HamburgerLogo from '../../assets/hamburger.svg'
 import { Avatar } from '../ui/avatar'
+import { OverlaySidebar } from '../OverlaySidebarv2'
+// import { OverlaySidebarv2 } from './OverlaySidebarv2'
 
 export function NavigationBar() {
     return (
@@ -19,12 +20,12 @@ export function NavigationBar() {
 					borderBottomColor="blackAlpha.200"
 				>
 					<HStack h="100%" alignItems="center">
-					<Box display={{ base: "block", lg: "none" }}>
-					<img src={HamburgerLogo} width="28" alt="" style={{ marginRight: "15px" }} />
+					<Box>
+						<OverlaySidebar />
 					</Box>
-					<img src={MyPortalLogo} width={"120"} alt="React logo" />
+					<Image src={MyPortalLogo} width={{ base:"110px", md: "130px", lg:"150px"}} alt="React logo" />
 					<Spacer />
-						<HStack gap="8">
+						<HStack gap="8" display={{ base: "none", sm: "flex" }}> 
 							<img src={MessageLogo} width="28" alt="Message logo" />
 							<img src={BellLogo} width="28" alt="Notification logo" />
 							<Avatar variant="solid" name="Sage Adebayo" width="10" height="10" />

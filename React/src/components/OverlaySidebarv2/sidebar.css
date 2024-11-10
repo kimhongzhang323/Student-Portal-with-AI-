@@ -1,0 +1,80 @@
+/* Button to open the sidebar */
+.open-btn {
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -220px; /* Sidebar is hidden initially */
+    width: 220px;
+    height: 100%;
+    background-color: #ffffff;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .sidebar.active {
+    left: 0; /* Slide in from the left when active */
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+    text-align: start;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: start;
+  }
+  
+  .sidebar ul li {
+    margin: 20px 0 0px 0px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+  }
+  
+  .sidebar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Close button for the sidebar */
+  .close-btn {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 9px;
+    right: 30px;
+  }
+  
+  /* Overlay to darken the background */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+    visibility: hidden;
+  }
+  
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+  }
