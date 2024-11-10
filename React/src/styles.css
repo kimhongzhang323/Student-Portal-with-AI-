@@ -81,3 +81,9 @@
     transform: rotate(-45deg); /* Adjust as needed to rotate the hand */
     fill:white;
   }
+
+.grayBg{
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 10px;
+}

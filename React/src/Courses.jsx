@@ -16,8 +16,8 @@ export default function Courses(){
                     </div>
                 </div>
             </div>
-                <Tabs.Root defaultValue="members" variant='outline'>
-                    <Tabs.List>
+            <Tabs.Root defaultValue="members" variant='outline'>
+                <Tabs.List>
                     <Tabs.Trigger value="members">
 
                         Members
@@ -28,15 +28,15 @@ export default function Courses(){
                     <Tabs.Trigger value="tasks">
                         Settings
                     </Tabs.Trigger>
-                    </Tabs.List>
-                    <Tabs.Content value="members">
-                    Manage your team members
-                    </Tabs.Content>
-                    <Tabs.Content value="projects">Manage your projects</Tabs.Content>
-                    <Tabs.Content value="tasks">
-                    Manage your tasks for freelancers
-                    </Tabs.Content>
-                </Tabs.Root>
+                </Tabs.List>
+                <Tabs.Content value="members" className='grayBg'>
+                Manage your team members
+                </Tabs.Content>
+                <Tabs.Content value="projects">Manage your projects</Tabs.Content>
+                <Tabs.Content value="tasks">
+                Manage your tasks for freelancers
+                </Tabs.Content>
+            </Tabs.Root>
         </NavigationLayout>
     )
 }
