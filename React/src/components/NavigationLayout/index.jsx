@@ -8,7 +8,6 @@ export function NavigationLayout(props) {
       <Box display="flex" flexDirection="column" minHeight="100vh">
         <NavigationBar />
         <Box display="flex" flex="1">
-          <SideBar />
           <Box display="flex" flex="1">
             <Box margin={"40px"} width="100%">
               {props.children}

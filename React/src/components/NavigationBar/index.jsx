@@ -20,7 +20,7 @@ export function NavigationBar() {
 					borderBottomColor="blackAlpha.200"
 				>
 					<HStack h="100%" alignItems="center">
-					<Box display={{ base: "block", lg: "none" }}>
+					<Box>
 						<OverlaySidebar />
 					</Box>
 					<Image src={MyPortalLogo} width={{ base:"110px", md: "130px", lg:"150px"}} alt="React logo" />
