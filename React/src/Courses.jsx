@@ -1,4 +1,4 @@
-import { Heading } from '@chakra-ui/react'
+import { Heading,Tabs,For } from '@chakra-ui/react'
 import { NavigationLayout } from './components/NavigationLayout'
 import { FaRegBell } from "react-icons/fa";
 import { TbHandClick } from "react-icons/tb";
@@ -16,6 +16,27 @@ export default function Courses(){
                     </div>
                 </div>
             </div>
+                <Tabs.Root defaultValue="members" variant='outline'>
+                    <Tabs.List>
+                    <Tabs.Trigger value="members">
+
+                        Members
+                    </Tabs.Trigger>
+                    <Tabs.Trigger value="projects">
+                        Projects
+                    </Tabs.Trigger>
+                    <Tabs.Trigger value="tasks">
+                        Settings
+                    </Tabs.Trigger>
+                    </Tabs.List>
+                    <Tabs.Content value="members">
+                    Manage your team members
+                    </Tabs.Content>
+                    <Tabs.Content value="projects">Manage your projects</Tabs.Content>
+                    <Tabs.Content value="tasks">
+                    Manage your tasks for freelancers
+                    </Tabs.Content>
+                </Tabs.Root>
         </NavigationLayout>
     )
 }
