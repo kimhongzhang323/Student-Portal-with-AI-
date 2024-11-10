@@ -1,6 +1,5 @@
 import { Box } from "@chakra-ui/react";
 import { NavigationBar } from "../NavigationBar";
-import { SideBar } from "../Sidebar";
 
 export function NavigationLayout(props) {
   return (

@@ -1,11 +1,9 @@
 import './App.css'
-import { Box, Heading, HStack, Link, SimpleGrid, Text } from '@chakra-ui/react'
-import { NavigationBar } from './components/NavigationBar'
+import { Heading, HStack, SimpleGrid, Text } from '@chakra-ui/react'
 import AssignmentComponent from './components/Assignment'
 import EnrolledComponent from './components/Enrolled'
 import EnrolledLogo from './assets/courses.svg'
 import AssignmentLogo from './assets/assignments.svg'
-import { SideBar } from './components/Sidebar'
 import { NavigationLayout } from './components/NavigationLayout'
 
 export default function Homepage() {
