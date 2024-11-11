@@ -27,9 +27,6 @@ import google.generativeai as genai
 GEMINI_API_KEY = settings.GEMINI_API_KEY
 
 
-def random(request):
-    return HttpResponse("This is a random view.")
-
 def send_message(request):
     if request.method == 'POST':
         # Configure the Gemini AI model with the API key
@@ -86,35 +83,6 @@ def signup(request):
         user.save()
         return redirect('login')
     return render(request, 'signup.html')
-
-
-def generate_verification_code():
-    """Generate a 6-digit random verification code."""
-    return str(random.randint(100000, 999999))
-
-
-def send_verification_email(user, verification_code):
-    """Send a verification email with a 6-digit code."""
-    subject = 'Your Verification Code'
-    message = f'Hi {user.name},\n\nYour verification code is: {verification_code}'
-    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email])
-
-
-def verify_code(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        code = request.POST.get('code')
-        
-        try:
-            user = User.objects.get(email=email, verification_code=code)
-            user.is_active = True
-            user.verification_code = None  # Clear the code after verification
-            user.save()
-            return JsonResponse({'message': 'Account verified successfully!'})
-        except User.DoesNotExist:
-            return JsonResponse({'error': 'Invalid verification code or email.'}, status=400)
-
-    return render(request, 'verify_code.html')
 
 
 
