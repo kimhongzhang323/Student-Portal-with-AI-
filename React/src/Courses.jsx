@@ -11,8 +11,8 @@ export default function Courses(){
                 <SubjectTitle title='Object Oriented Programming'/> 
             </div>
 
-            <Tabs.Root defaultValue="members" variant='outline'>
-                <Tabs.List>
+            <Tabs.Root defaultValue="members" variant='subtle' style={{justifyContent:'flex-start'}}>
+                <Tabs.List className='tabsGray'>
                     <Tabs.Trigger value="members">
 
                         Members
@@ -24,11 +24,11 @@ export default function Courses(){
                         Settings
                     </Tabs.Trigger>
                 </Tabs.List>
-                <Tabs.Content value="members" className='grayBg'>
+                <Tabs.Content value="members" className='grayBorder'>
                 Manage your team members
                 </Tabs.Content>
-                <Tabs.Content value="projects" className='grayBg'>Manage your projects</Tabs.Content>
-                <Tabs.Content value="tasks" className='grayBg'>
+                <Tabs.Content value="projects" className='grayBorder'>Manage your projects</Tabs.Content>
+                <Tabs.Content value="tasks" className='grayBorder'>
                 Manage your tasks for freelancers
                 </Tabs.Content>
             </Tabs.Root>

@@ -82,8 +82,20 @@
     fill:white;
   }
 
-.grayBg{
-    background-color: rgb(240, 240, 240);
-    border-radius: 5px;
+.grayBorder{
+    border: 3px solid rgba(0, 0, 0, 0.13);
     padding: 10px;
+}
+
+.tabsGray{
+    background-color: rgba(0, 0, 0, 0.05);
+    justify-content: left;
+    width: 100%;
+    margin-bottom: -2px;    
+}
+
+[aria-selected="true"] {
+    background-color: white;
+    border-color: #e2e8f0;
+    border-bottom: 2px solid gray;
 }
