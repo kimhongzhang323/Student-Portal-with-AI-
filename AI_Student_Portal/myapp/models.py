@@ -50,8 +50,12 @@ class Course(models.Model):
     lect = models.ForeignKey(
         User, 
         on_delete=models.CASCADE, 
-        limit_choices_to={'role': 'lecturer'}
+        limit_choices_to={'role': 'lecturer'},
+        related_name='courses'
     )
+    days = models.CharField(max_length=50)  
+    time = models.CharField(max_length=50)  
+    location = models.CharField(max_length=100)  
 
     def __str__(self):
         return f"{self.name} - {self.code}"
