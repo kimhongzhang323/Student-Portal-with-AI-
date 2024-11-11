@@ -8,14 +8,6 @@ export default function Courses(){
     return(
         <NavigationLayout>
             <div className='centeredContainer'>
-                <div className='subjectTitle'>
-                    <Heading size='6xl' style={{width:'80%',textAlign:'left',textWrap:'unset'}}>Object Oriented Programming</Heading>
-                    <div className='shortAnnouncement'>
-                        <FaRegBell style={{height:'30px',width:'30px',margin:'5px 10px'}}/>
-                        <strong>Announcement: Lorem Ipsum Dolor sit Amet</strong>
-                        <TbHandClick className='handClickIcon'/>
-                    </div>
-                </div>
                 <SubjectTitle title='Object Oriented Programming'/> 
             </div>
 
