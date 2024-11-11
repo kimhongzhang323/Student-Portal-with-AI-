@@ -9,9 +9,18 @@ from rest_framework.decorators import api_view
 from rest_framework_simplejwt.tokens import RefreshToken
 import google.generativeai as genai
 from django.http import JsonResponse
+from myapp.serializers import CourseSerializer
+from myapp.models import Course
 
 # Initialize Google Gemini API Key
 GEMINI_API_KEY = settings.GEMINI_API_KEY
+
+@api_view(['GET'])
+def course_details_view(request):
+    courses = Course.objects.all()
+    serializer = CourseSerializer(courses, many=True)
+    return Response(serializer.data)
+    
 
 @api_view(['POST'])
 def login_view(request):
