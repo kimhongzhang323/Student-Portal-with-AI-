@@ -9,8 +9,9 @@ from rest_framework.decorators import api_view
 from rest_framework_simplejwt.tokens import RefreshToken
 import google.generativeai as genai
 from django.http import JsonResponse
-from myapp.serializers import CourseSerializer
-from myapp.models import Course
+from myapp.utils import extract_text_from_docx, extract_text_from_pdf
+from myapp.serializers import CourseSerializer, MaterialSerializer
+from myapp.models import ChatMessage, Course, Material
 
 # Initialize Google Gemini API Key
 GEMINI_API_KEY = settings.GEMINI_API_KEY
@@ -74,3 +75,56 @@ def api_logout_view(request):
     logout(request)
     return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
 
+@api_view(['POST'])
+def send_message(request):
+    user_prompt = request.data.get('prompt')
+    course_id = request.data.get('course_id')
+    material_id = request.data.get('material_id')
+    
+    # Fetch course and material
+    course = Course.objects.filter(id=course_id).first()
+    material = Material.objects.filter(id=material_id, course=course).first()
+    
+    # Initialize material content for prompt
+    material_content = ""
+    if material and material.file:
+        file_path = material.file.path
+        if file_path.endswith('.pdf'):
+            material_content = extract_text_from_pdf(file_path)
+        elif file_path.endswith('.docx'):
+            material_content = extract_text_from_docx(file_path)
+    
+    # Structure the prompt
+    pre_prompt = (
+        f"You are assisting with the course '{course.name}' using material titled '{material.title}'. "
+        "Provide guidance and instructions, referring to the following content without giving direct answers:\n\n"
+        f"{material_content[:1000]}..."  # Limiting content length to avoid overwhelming the model
+    )
+    full_prompt = f"{pre_prompt}{user_prompt}"
+    
+    # Call Gemini AI with the structured prompt
+    response = genai.chat(full_prompt)
+    bot_response = response['message']
+    
+    # Save the chat with selected course and material
+    chat_message = ChatMessage.objects.create(
+        prompt=user_prompt,
+        bot_response=bot_response,
+        course=course,
+        material=material
+    )
+    
+    return Response({"bot_response": bot_response})
+
+
+@api_view(['GET'])
+def get_courses(request):
+    courses = Course.objects.all()
+    serializer = CourseSerializer(courses, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def get_materials(request, course_id):
+    materials = Material.objects.filter(course_id=course_id)
+    serializer = MaterialSerializer(materials, many=True)
+    return Response(serializer.data)
