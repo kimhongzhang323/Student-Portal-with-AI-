@@ -1,6 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 import { CiGlobe } from "react-icons/ci";
-import { MdFileUpload } from "react-icons/md";
+import { MdOutlineFileUpload } from "react-icons/md";
 
 export function WeeklyItem(props){
     let icon,color;
@@ -9,7 +9,7 @@ export function WeeklyItem(props){
         color = "rgb(0,140,255)"
     }
     else if (props.type === 'assignmentUpload'){
-        icon = <MdFileUpload style={{height:'50px',width:'50px',padding:'5px'}}/>
+        icon = <MdOutlineFileUpload style={{height:'50px',width:'50px',padding:'5px'}}/>
         color = "rgb(255,159,63)"
     }
     return(
