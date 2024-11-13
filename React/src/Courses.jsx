@@ -4,6 +4,7 @@ import { FaRegBell } from "react-icons/fa";
 import { TbHandClick } from "react-icons/tb";
 import {SubjectTitle} from './components/SubjectTitle'
 import {TabTrigger} from './components/TabTrigger'
+import { TabsContent } from './components/TabsContent';
 
 export default function Courses(){
     return(
@@ -18,13 +19,9 @@ export default function Courses(){
                     <TabTrigger value="section2" text="Section 2"/>
                     <TabTrigger value="section3" text="Section 3"/>
                 </Tabs.List>
-                <Tabs.Content value="members" className='grayBorder'>
-                Manage your team members
-                </Tabs.Content>
-                <Tabs.Content value="projects" className='grayBorder'>Manage your projects</Tabs.Content>
-                <Tabs.Content value="tasks" className='grayBorder'>
-                Manage your tasks for freelancers
-                </Tabs.Content>
+                <TabsContent value="section1" text="This is Section 1"/>
+                <TabsContent value="section2" text="This is Section 2"/>
+                <TabsContent value="section3" text="This is Section 3"/>
             </Tabs.Root>
         </NavigationLayout>
     )
