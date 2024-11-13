@@ -1,7 +1,5 @@
-import { Heading,Tabs,For } from '@chakra-ui/react'
+import { Tabs } from '@chakra-ui/react'
 import { NavigationLayout } from './components/NavigationLayout'
-import { FaRegBell } from "react-icons/fa";
-import { TbHandClick } from "react-icons/tb";
 import {SubjectTitle} from './components/SubjectTitle'
 import {TabTrigger} from './components/TabTrigger'
 import { TabsContent } from './components/TabsContent';
