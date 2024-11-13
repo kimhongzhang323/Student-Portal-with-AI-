@@ -23,6 +23,9 @@ def course_details_view(request):
     return Response(serializer.data)
     
 
+def homepage(request):
+    return render(request, 'index.html')
+
 @api_view(['POST'])
 def login_view(request):
     username = request.data.get('username')
