@@ -115,7 +115,8 @@ To keep sensitive information secure, you will need to set up environment variab
 4. Open a new terminal window, navigate to the React frontend directory, and start the React development server:
 
    ```bash
-   npm start
+   cd React
+   npm run dev
    ```
 
 5. Open your web browser and navigate to `http://127.0.0.1:3000/` for the React frontend.
