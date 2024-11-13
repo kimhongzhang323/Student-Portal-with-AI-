@@ -1,14 +1,6 @@
 from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
 
-class ChatMessage(models.Model):
-    prompt = models.TextField()
-    bot_response = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"User: {self.prompt[:30]}... | Bot: {self.bot_response[:30]}..."
-
 class User(models.Model):
     STUDENT = 'student'
     LECTURER = 'lecturer'
@@ -50,8 +42,12 @@ class Course(models.Model):
     lect = models.ForeignKey(
         User, 
         on_delete=models.CASCADE, 
-        limit_choices_to={'role': 'lecturer'}
+        limit_choices_to={'role': 'lecturer'},
+        related_name='courses'
     )
+    days = models.CharField(max_length=50)  
+    time = models.CharField(max_length=50)  
+    location = models.CharField(max_length=100)  
 
     def __str__(self):
         return f"{self.name} - {self.code}"
@@ -74,3 +70,24 @@ class Class(models.Model):
 
     def __str__(self):
         return f"{self.section.code} - {self.student.name}"
+
+class Material(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField(blank=True)  # Optional for storing text directly
+    file = models.FileField(upload_to='materials/', blank=True, null=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='materials')
+
+    def __str__(self):
+        return f"{self.title} - {self.course.name}"
+
+class ChatMessage(models.Model):
+    prompt = models.TextField()
+    bot_response = models.TextField()
+    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True, blank=True)
+    material = models.ForeignKey(Material, on_delete=models.SET_NULL, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"User: {self.prompt[:30]}... | Bot: {self.bot_response[:30]}..."
+
+

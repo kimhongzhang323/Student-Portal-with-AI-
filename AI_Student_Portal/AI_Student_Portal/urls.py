@@ -17,16 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myapp import views  # Replace 'my_app' with the actual app name
-from rest_framework_simplejwt.views import TokenRefreshView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/', views.signup, name='signup'),
-    path('verify/', views.verify_code, name='verify_code'),
     path('logout/', views.logout_view, name='logout'),
     path('api/logout/', views.api_logout_view, name='api_logout'),
-    
-    path('random/', views.random, name='random'),
+    path('api/courses/', views.course_details_view, name='course_details'),
 
 ]
