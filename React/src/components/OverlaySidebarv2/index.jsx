@@ -34,27 +34,27 @@ export function OverlaySidebar() {
         <ul style={{"marginTop": "25px"}}>
           <li>
             <img src={HomePageSVG} alt="" />
-            <a href="#home" style={{"color":"black"}}>Dashboard</a>
+            <a href="/" style={{"color":"black"}}>Dashboard</a>
           </li>
           <li>
             <img src={CalendarPageSVG} alt="" />
-            <a href="#services" style={{"color":"black"}}>Calendar</a>
+            <a href="/calendar" style={{"color":"black"}}>Calendar</a>
           </li>
           <li>
             <img src={PagesPageSVG} alt="" />
-            <a href="#contact" style={{"color":"black"}}>Pages</a>
+            <a href="/pages" style={{"color":"black"}}>Pages</a>
           </li>
           <li>
             <img src={GeminiPageSVG} alt="" />
-            <a href="#about" style={{"color":"black"}}>Gemini</a>
+            <a href="/gemini" style={{"color":"black"}}>Gemini</a>
           </li>
           <li>
             <img src={CoursesPageSVG} alt="" />
-            <a href="#about" style={{"color":"black"}}>Courses</a>
+            <a href="/courses" style={{"color":"black"}}>Courses</a>
           </li>
           <li>
             <img src={SettingsPageSVG} alt="" />
-            <a href="#about" style={{"color":"black"}}>Settings</a>
+            <a href="/settings" style={{"color":"black"}}>Settings</a>
           </li>
         </ul>
       </div>
