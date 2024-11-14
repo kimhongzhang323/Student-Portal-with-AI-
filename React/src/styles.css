@@ -52,3 +52,97 @@
     justify-content: center;
     margin:10px auto;
 }
+
+.subjectTitle{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    width: 60%;
+    padding: 30px;
+}
+
+.shortAnnouncement{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    width: 60%;
+    padding: 5px;
+    margin-top: 10px ;
+    background-color: rgb(255, 212, 0);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.handClickIcon {
+    position: absolute;
+    bottom: -13px; /* Adjust as needed to position the hand outside the container */
+    right: -18px;  /* Adjust as needed to position the hand outside the container */
+    height: 40px;  /* Adjust the size as needed */
+    width: 40px;   /* Adjust the size as needed */
+    transform: rotate(-45deg); /* Adjust as needed to rotate the hand */
+    fill:white;
+  }
+
+.grayBorder{
+    border: 3px solid rgba(0, 0, 0, 0.13);
+    padding: 10px;
+}
+
+.tabsGray{
+    background-color: rgba(0, 0, 0, 0.05);
+    justify-content: left;
+    width: 100%;
+    margin-bottom: -2px;    
+}
+
+[aria-selected="true"] {
+    background-color: white;
+    border-color: #e2e8f0;
+    border-bottom: 2px solid gray;
+}
+
+.materialsFolder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.05);
+    width:fit-content;
+    padding: 5px 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.materialsContainer{
+    display:flex;
+    justify-content: space-evenly;
+    margin:10px 20px;
+}
+
+.weeklyContainer{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    margin:20px;
+    border-radius: 3px;
+}
+
+.itemTitle{
+    display: flex;
+    height: fit-content;
+}
+
+.itemIcon{
+    padding:auto;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.weeklyItem{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 0px;
+}
