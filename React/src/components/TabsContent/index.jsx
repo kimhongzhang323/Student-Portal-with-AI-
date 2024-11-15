@@ -9,9 +9,9 @@ export function TabsContent(props){
                 Materials
             </Heading>
             <div className='materialsContainer'>
-                <MaterialsFolder folderName='Lecture Notes'/>
-                <MaterialsFolder folderName='Assignments'/>
-                <MaterialsFolder folderName='Quizzes'/>
+                <MaterialsFolder folderName='Lecture Notes' link="/lectureNotes"/>
+                <MaterialsFolder folderName='Assignments' link="/assignments"/>
+                <MaterialsFolder folderName='Quizzes' link="/quizzes"/>
             </div>
             {/* make loop here for  each week */}
             <WeeklyContainer week='Week 1'/>
