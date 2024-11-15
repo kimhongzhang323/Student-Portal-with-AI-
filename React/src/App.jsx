@@ -3,6 +3,7 @@ import Homepage from './Homepage'
 import Courses from './Courses'
 import Login from './Login'
 import Another from './another'
+import LectureNotes from './LectureNotes'
 
 function App() {
   return(
@@ -12,6 +13,9 @@ function App() {
         <Route path="/courses" element = {<Courses />} />
         <Route path = "/login" element = {<Login />} />
         <Route path = "/another" element = {<Another/>} />
+        <Route path="/lectureNotes" element = {<LectureNotes />} />
+        {/* <Route path="/assignments" element = {<Assignments />} />
+        <Route path="/quizzes" element = {<Quizzes />} /> */}
       </Routes>
     </Router>
   )
