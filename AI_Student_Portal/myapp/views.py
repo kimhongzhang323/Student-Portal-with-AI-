@@ -126,6 +126,14 @@ def get_courses(request):
     serializer = CourseSerializer(courses, many=True)
     return Response(serializer.data)
 
+
+@api_view(["GET"])
+def course_page(request, course_id):
+    course_info = Course.objects.all(pk=course_id)
+    serializer = CourseSerializer(course_info, many=True)
+    return Response(serializer.data)
+
+
 @api_view(['GET'])
 def get_materials(request, course_id):
     materials = Material.objects.filter(course_id=course_id)
