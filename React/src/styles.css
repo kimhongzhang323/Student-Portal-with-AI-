@@ -150,3 +150,16 @@
     padding: 10px;
     padding-left: 0px;
 }
+
+.folderTitle{
+    display: flex;
+    align-items: center;
+
+}
+
+.filesContainer{
+    border: 1px solid black;
+    min-height: 60vh;
+    height:max-content;
+    position: relative;
+}
