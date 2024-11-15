@@ -16,8 +16,8 @@ export default function LectureNotes(props){
             <div className='filesContainer'>
                 <FaRegFolderOpen  size='40px'  style={{marginLeft:'30px', marginTop:'20px'}}/>
                 <div style={{display:'flex', height:'100%', alignItems:'stretch'}}>
-                    <div style={{height:'70%',borderRight:'3px solid rgba(0,0,0,0.3)', marginLeft:'40px', position:'absolute'}}>
-
+                    <div style={{height:'70%'}} className='grayRightBorder'>
+                        
                     </div>
                 </div>
             </div>
