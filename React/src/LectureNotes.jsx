@@ -3,6 +3,7 @@ import { CiFolderOn } from "react-icons/ci";
 import { Heading } from '@chakra-ui/react';
 import { FaFolderTree } from "react-icons/fa6";
 import { FaRegFolderOpen } from "react-icons/fa";
+import { FileTreeItem } from './components/FileTreeItem';
 
 export default function LectureNotes(props){
     return(
@@ -15,10 +16,11 @@ export default function LectureNotes(props){
             </div>
             <div className='filesContainer'>
                 <FaRegFolderOpen  size='40px'  style={{marginLeft:'30px', marginTop:'20px'}}/>
-                <div style={{display:'flex', height:'100%', alignItems:'stretch'}}>
+                <div style={{display:'flex', height:'100%'}}>
                     <div style={{height:'70%'}} className='grayRightBorder'>
                         
                     </div>
+                    <FileTreeItem fileName='ericdoods.pdf'/>
                 </div>
             </div>
         </NavigationLayout>
