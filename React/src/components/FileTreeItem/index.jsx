@@ -1,5 +1,5 @@
     import { BsFiletypePdf } from "react-icons/bs";
-
+    import FileData from "../FileData";
 
     export function FileTreeItem(props){
         return(
@@ -16,10 +16,7 @@
                 <div style={{borderBottom:'3px solid rgba(0,0,0,0.3)',borderLeft:'3px solid gray', height:'100%',width:'3%',marginTop:'13px'}}>
 
                 </div>
-                <BsFiletypePdf size='30px'/>
-                <div style={{alignItems:'center'}}>
-                    {props.fileName}
-                </div>
+                <FileData fileName={props.fileName} size='30px'/>
             </div>
         )
     }
