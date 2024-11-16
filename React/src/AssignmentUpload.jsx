@@ -4,8 +4,14 @@ import { MdOutlineFileUpload } from "react-icons/md";
 import AssignmentDetailsGroup from './components/AssignmentDetailsGroup';
 import {Button} from '@chakra-ui/react';
 import SubmissionDetailsGroup from './components/SubmissionDetailsGroup';
+import { useNavigate } from 'react-router-dom';
 
 export default function LectureNotes(props){
+    const navigate = useNavigate();
+    
+    function handleClick(){
+        navigate('/addSubmission');
+    }
     return(
         <NavigationLayout>
             <div className='folderTitle'>
@@ -20,7 +26,7 @@ export default function LectureNotes(props){
                 </div>
                 <div style={{display:'flex',alignItems:'center'}}>
                     <Heading style={{margin:'auto 20px'}} size='3xl'>Submissions</Heading>
-                    <Button style={{color:'white',fontSize:'0.9em',borderRadius:'10px'}} bgColor={'rgb(52,147,255)'}>Add Submission</Button>
+                    <Button style={{color:'white',fontSize:'0.9em',borderRadius:'10px'}} bgColor={'rgb(52,147,255)'} onClick={handleClick}>Add Submission</Button>
                 </div>
                 <div className="centeredContainer">
                     <SubmissionDetailsGroup />

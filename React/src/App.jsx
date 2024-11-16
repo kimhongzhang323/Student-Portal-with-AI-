@@ -7,6 +7,7 @@ import LectureNotes from './LectureNotes'
 import Assignments from './Assignments'
 import Quizzes from './Quizzes'
 import AssignmentUpload from './AssignmentUpload'
+import AddSubmission from './AddSubmission'
 
 function App() {
   return(
@@ -20,6 +21,7 @@ function App() {
         <Route path="/assignments" element = {<Assignments />} />
         <Route path="/quizzes" element = {<Quizzes />} />
         <Route path='/assignmentUpload' element={<AssignmentUpload />} />
+        <Route path ='/addSubmission' element={<AddSubmission />} />
       </Routes>
     </Router>
   )
