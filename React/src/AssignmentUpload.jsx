@@ -3,6 +3,7 @@ import { Heading } from '@chakra-ui/react';
 import { MdOutlineFileUpload } from "react-icons/md";
 import AssignmentDetailsGroup from './components/AssignmentDetailsGroup';
 import {Button} from '@chakra-ui/react';
+import SubmissionDetailsGroup from './components/SubmissionDetailsGroup';
 
 export default function LectureNotes(props){
     return(
@@ -21,7 +22,9 @@ export default function LectureNotes(props){
                     <Heading style={{margin:'auto 20px'}} size='3xl'>Submissions</Heading>
                     <Button style={{color:'white',fontSize:'0.9em',borderRadius:'10px'}} bgColor={'rgb(52,147,255)'}>Add Submission</Button>
                 </div>
-                
+                <div className="centeredContainer">
+                    <SubmissionDetailsGroup />
+                </div>
             </div>
         </NavigationLayout>
     )
