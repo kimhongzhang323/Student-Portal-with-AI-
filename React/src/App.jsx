@@ -6,6 +6,7 @@ import Another from './another'
 import LectureNotes from './LectureNotes'
 import Assignments from './Assignments'
 import Quizzes from './Quizzes'
+import AssignmentUpload from './AssignmentUpload'
 
 function App() {
   return(
@@ -18,6 +19,7 @@ function App() {
         <Route path="/lectureNotes" element = {<LectureNotes />} />
         <Route path="/assignments" element = {<Assignments />} />
         <Route path="/quizzes" element = {<Quizzes />} />
+        <Route path='/assignmentUpload' element={<AssignmentUpload />} />
       </Routes>
     </Router>
   )

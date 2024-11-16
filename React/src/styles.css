@@ -169,3 +169,28 @@
     margin-left: 50px;
     position: absolute;
 }
+
+.assignmentDetailsGroup{
+    background-color: gray;
+    width: fit-content;
+    margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px;
+}
+
+.assignmentDetailsText{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: lighter;
+    margin: 0 10px ;
+}
+
+.assignmentDetail{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 10px auto;
+}
