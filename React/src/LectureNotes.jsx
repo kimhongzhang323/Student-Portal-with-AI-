@@ -15,12 +15,16 @@ export default function LectureNotes(props){
                 </Heading>
             </div>
             <div className='filesContainer'>
-                <FaRegFolderOpen  size='40px'  style={{marginLeft:'30px', marginTop:'20px'}}/>
-                <div style={{display:'flex', height:'100%'}}>
-                    <div style={{height:'70%'}} className='grayRightBorder'>
-                        
+                <FaRegFolderOpen  size='40px'  style={{marginLeft:'30px', marginTop:'20px', backgroundColor:'white',marginBottom:'8px'}}/>
+                <div style={{display:'flex', height:'fit-content'}}>
+                    <div style={{width:'100%',alignContent:'center',alignItems:'center',height:'100%',position:'relative'}}>
+                        <FileTreeItem fileName='ericdoods.pdf'/>
+                        <FileTreeItem fileName='ericdoods.pdf'/>
+                        <FileTreeItem fileName='ericdoods.pdf'/>
+                        <FileTreeItem fileName='ericdoods.pdf'/>
+                        <FileTreeItem fileName='ericdoods.pdf'/>
+                        <FileTreeItem fileName='ericdoods.pdf'/>
                     </div>
-                    <FileTreeItem fileName='ericdoods.pdf'/>
                 </div>
             </div>
         </NavigationLayout>
