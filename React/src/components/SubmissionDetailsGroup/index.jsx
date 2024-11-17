@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react"
+import { Heading, Text } from "@chakra-ui/react"
 import { CiPen,CiChat1,CiFileOn } from "react-icons/ci";
 
 export default function SubmissionDetailsGroup(){
@@ -7,17 +7,17 @@ export default function SubmissionDetailsGroup(){
             <Heading style={{textAlign:'left',margin:'10px'}} size={'lg'}>
                 Submission 1
             </Heading>
-            <div style={{display:'flex',margin:'10px'}}>
-                <CiFileOn size='30px'/>
-                <Heading style={{margin:'auto 10px'}} size='md'>Files Submitted: 1.pdf,2.png.3.doc</Heading>
+            <div style={{display:'flex',margin:'10px', alignItems: "center"}}>
+                <CiFileOn size='20px'/>
+                <Text style={{margin:'auto 10px'}} size={{ base: "sm", sm: "md"}} textAlign={"start"}><strong>Files Submitted:</strong> 1.pdf,2.png.3.doc</Text>
             </div>
-            <div style={{display:'flex',margin:'10px'}}>
-                <CiPen size='30px'/>
-                <Heading style={{margin:'auto 10px'}} size='md'>Grading: Ungraded</Heading>
+            <div style={{display:'flex',margin:'10px', alignItems: "center"}}>
+                <CiPen size='20px'/>
+                <Text style={{margin:'auto 10px'}} size={{ base: "sm", sm: "md"}} textAlign={"start"}><strong>Grading:</strong> Ungraded</Text>
             </div>
-            <div style={{display:'flex',margin:'10px'}}>
-                <CiChat1 size='30px'/>
-                <Heading style={{margin:'auto 10px'}} size='md'>Remarks: Lorem ipsum dolor sit amet</Heading>
+            <div style={{display:'flex',margin:'10px', alignItems: "center"}}>
+                <CiChat1 size='20px'/>
+                <Text style={{margin:'auto 10px'}} size={{ base: "sm", sm: "md"}} textAlign={"start"}><strong>Remarks:</strong> Lorem ipsum dolor sit amet</Text>
             </div>
         </div>
 

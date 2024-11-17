@@ -49,7 +49,6 @@
 .centeredContainer{
     display: flex;
     align-items: center;
-    justify-content: center;
     margin:10px auto;
 }
 
@@ -154,14 +153,20 @@
 .folderTitle{
     display: flex;
     align-items: center;
-
 }
 
 .filesContainer{
-    border: 1px solid black;
-    min-height: 60vh;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
     height:fit-content;
     position: relative;
+    padding: 20px 25px;
+}
+
+@media only screen and (max-width: 768px) {
+    .filesContainer {
+        padding: 15px 20px;
+    }
 }
 
 .grayRightBorder{
@@ -170,38 +175,13 @@
     position: absolute;
 }
 
-.assignmentDetailsGroup{
-    background-color: rgb(227, 226, 226);
-    width: fit-content;
-    margin-top: 30px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    padding: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.assignmentDetailsText{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.3rem;
-    font-weight: lighter;
-    margin: 0 10px ;
-}
-
-.assignmentDetail{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin: 10px auto;
-}
-
 .submissionDetailsGroup{
-    background-color: rgb(213, 213, 213);
-    width: 80%;
+    background-color: rgb(255, 255, 255);
     padding: 10px;
     align-items: center;
     justify-content: left;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
 }
 
 .uploadInterface{

@@ -1,5 +1,5 @@
 import { NavigationLayout } from './components/NavigationLayout'
-import { Heading } from '@chakra-ui/react';
+import { Box, Heading } from '@chakra-ui/react';
 import { MdOutlineFileUpload } from "react-icons/md";
 import AssignmentDetailsGroup from './components/AssignmentDetailsGroup';
 import {Button} from '@chakra-ui/react';
@@ -14,24 +14,24 @@ export default function LectureNotes(props){
     }
     return(
         <NavigationLayout>
-            <div className='folderTitle'>
-                <MdOutlineFileUpload size='70px'/>
-                <Heading style={{marginLeft:'10px'}}>
+            <Box className='folderTitle' mb="20px">
+                <MdOutlineFileUpload size='30px'/>
+                <Heading ml="10px">
                     Assignment Upload
                 </Heading>
-            </div>
-            <div className='filesContainer'>
+            </Box>
+            <Box className='filesContainer'>
                 <div className='centeredContainer'>
                     <AssignmentDetailsGroup />
                 </div>
-                <div style={{display:'flex',alignItems:'center'}}>
-                    <Heading style={{margin:'auto 20px'}} size='3xl'>Submissions</Heading>
-                    <Button style={{color:'white',fontSize:'0.9em',borderRadius:'10px'}} bgColor={'rgb(52,147,255)'} onClick={handleClick}>Add Submission</Button>
-                </div>
+                <Box style={{display:'flex'}} alignItems={{ base:'flex-start', sm:'center'}} flexDir={{ base: "column", sm: "row"}} marginTop="6" marginBottom={{ base: "5", sm: "3"}}>
+                    <Heading size={{ lg: "3xl", md: "2xl", base: "xl"}} marginRight={"4"} >Submissions</Heading>
+                    <Button style={{color:'white',fontSize:'0.9em',borderRadius:'5px'}} bgColor={'rgb(52,147,255)'} onClick={handleClick}>Add Submission</Button>
+                </Box>
                 <div className="centeredContainer">
                     <SubmissionDetailsGroup />
                 </div>
-            </div>
+            </Box>
         </NavigationLayout>
     )
 }
