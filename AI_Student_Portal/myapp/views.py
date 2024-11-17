@@ -128,6 +128,7 @@ def get_courses(request):
     serializer = CourseSerializer(courses, many=True)
     return JsonResponse(serializer.data)
 
+#serializer is used to convert the data into JSON format
 @api_view(['GET'])
 def get_materials(request, course_id):
     materials = Material.objects.filter(course_id=course_id)
@@ -175,7 +176,7 @@ def student_list_view(request):
         }
         for student in students
     ]
-    
+    ##safe=False is used to allow serialization of non-dict objects
     return JsonResponse(student_data, safe=False)
 
 @api_view(['POST'])
