@@ -10,7 +10,7 @@ export default function Courses(){
             <div className='centeredContainer'>
                 <SubjectTitle title='Object Oriented Programming'/> 
             </div>
-            <Tabs.Root defaultValue="members" variant='subtle' style={{justifyContent:'flex-start'}}>
+            <Tabs.Root defaultValue="section1" variant='subtle' style={{justifyContent:'flex-start'}}>
                 {/* Add logic here for looping to create tabs */}
                 <Tabs.List className='tabsGray'>
                     <TabTrigger value="section1" text="Section 1"/>
