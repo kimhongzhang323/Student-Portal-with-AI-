@@ -1,4 +1,4 @@
-import {Field,Box,Container,Input,defineStyle,Button,Heading,For,Stack,Group } from '@chakra-ui/react';
+import {Field,Box,Container,Input,defineStyle,Button,Heading,For,Stack,Group, PinInput, PinInputField, HStack } from '@chakra-ui/react';
 import "./styles.css";
 import React, {useState} from 'react';
 import {
@@ -66,21 +66,36 @@ export default function SignUp(){
                     </StepsContent>
                     <StepsContent index={1}>
                         <form>
-                        <label>
-                            Username:
-                            <input type="text" placeholder="Enter a username" />
-                        </label>
-                        <br />
-                        <label>
-                            Password:
-                            <input type="password" placeholder="Enter a password" />
-                        </label>
+                        <div>
+                            <Heading size='md' style={{margin:'0 auto',padding:'0',textAlign:'left'}}>Date of Birth</Heading>
+                            <Input type='date' placeholder='dd/MM/YY' style={{margin:'5px auto 15px',width:'100%'}}/>
+                        </div>
+                        <div>
+                            <Heading size='md' style={{margin:'0 auto',padding:'0',textAlign:'left'}}>Gender</Heading>
+                            <select name='gender' id='gender'  style={{margin:'5px auto 15px',width:'100%'}}>
+                                <option value='male'>Male</option>
+                                <option value='female'>Female</option>
+                            </select>
+                        </div>
+                        <div>
+                        <Heading size='md' style={{margin:'0 auto',padding:'0',textAlign:'left'}}>Phone Number</Heading>
+                        <Input type='tel' placeholder='+0123456789' style={{margin:'5px auto 15px',width:'100%'}}/>
+                        </div>
                         </form>
                     </StepsContent>
                     <StepsContent index={2}>
-                        <p>Please review your details and confirm your sign-up.</p>
+                        <div>
+                        <HStack>
+                        <PinInput otp>
+                            <PinInputField />
+                            <PinInputField />
+                            <PinInputField />
+                            <PinInputField />
+                        </PinInput>
+                        </HStack>
+                        </div>
                         <Button variant="solid" size="sm">
-                        Confirm Sign-Up
+                        Send OTP
                         </Button>
                     </StepsContent>
                     <StepsCompletedContent>
