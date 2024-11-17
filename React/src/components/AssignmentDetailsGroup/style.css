@@ -1,0 +1,35 @@
+.assignmentDetailsGroup{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+.assignmentDetail {
+    display: flex;
+    margin: 10px auto;
+    align-items: center;
+    text-align: start;
+}
+
+.assignmentDetailsText{
+    margin: 0 10px ;
+}
+
+@media only screen and (max-width: 475px) {
+    .assignmentDetailsText{
+        font-size: 0.85rem;
+    }    
+}
+
+@media only screen and (min-width: 768px) {
+    .assignmentDetailsText{
+        font-size: 1.15rem;
+    }    
+}
+
+@media only screen and (min-width: 1024px) {
+    .assignmentDetailsText{
+        font-size: 1.2rem;
+    }    
+}
