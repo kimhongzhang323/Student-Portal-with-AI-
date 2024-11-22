@@ -1,10 +1,11 @@
 import os
 from flask import Flask, jsonify, request, render_template, abort
 from flask_cors import CORS
-from flask_jwt_extended import create_access_token, create_refresh_token
+from flask_jwt_extended import create_access_token, create_refresh_token, get_jwt_identity
 from app import app, db
 import models
 from werkzeug.utils import secure_filename
+from werkzeug.security import check_password_hash
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -12,40 +13,47 @@ app = Flask(__name__)
 # Enable CORS (Cross-Origin Resource Sharing)
 CORS(app)
 
-# Homepage Route
-@app.route('/')
-def homepage():
-    return render_template('index.html')
-
-# Courses Route
-@app.route('/api/courses', methods=['GET'])
-def get_courses():
-    try:
-        courses = models.Course.query.all()
-        courses_list = [{'id': course.id, 'name': course.name} for course in courses]
-        return jsonify(courses_list), 200
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
-
 # Login Route
 @app.route('/api/login', methods=['POST'])
 def login():
+    # Parse the incoming JSON data
     data = request.json
     username = data.get('username')
     password = data.get('password')
 
+    # Ensure both username and password are provided
+    if not username or not password:
+        return jsonify({'error': 'Username and password are required'}), 400
+
+    # Find the user by username (email)
     user = models.User.query.filter_by(email=username).first()
-    if user and user.check_password(password):
-        access_token = create_access_token(identity=user.id)
+
+    # Check if the user exists and if the password matches
+    if user and check_password_hash(user.password_hash, password):
+        # Create access and refresh tokens
+        access_token = create_access_token(identity=user.id, fresh=True, expires_delta=False)  # Token expires shortly
         refresh_token = create_refresh_token(identity=user.id)
-        return jsonify({"access": access_token, "refresh": refresh_token}), 200
-    
+
+        # Return tokens in the response
+        return jsonify({
+            "access_token": access_token,
+            "refresh_token": refresh_token
+        }), 200
+
+    # If credentials are invalid, return an error
     return jsonify({'error': 'Invalid username or password'}), 401
 
-# Another Route (Placeholder for additional logic)
-@app.route('/api/another', methods=['GET'])
-def another_route():
-    return jsonify({"message": "This is another route!"}), 200
+
+@app.route('/api/course/sections', methods=['GET'])
+def get_course_sections():
+    # Sample data - replace with actual database queries
+    sections = [
+        {'id': 1, 'name': 'Section 1', 'description': 'Introduction to OOP'},
+        {'id': 2, 'name': 'Section 2', 'description': 'Classes and Objects'},
+        {'id': 3, 'name': 'Section 3', 'description': 'Inheritance and Polymorphism'},
+    ]
+    return jsonify(sections)
+
 
 # Lecture Notes Route
 @app.route('/api/lectureNotes', methods=['GET'])

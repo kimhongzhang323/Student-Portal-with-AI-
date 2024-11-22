@@ -20,6 +20,9 @@ class User(db.Model):
     role = db.Column(db.Enum(*ROLE_CHOICES), nullable=False)
     password = db.Column(db.String(128), nullable=False)
 
+    # Many-to-many relationship with courses via the enrollments table
+    courses = db.relationship('Course', secondary='enrollments', backref=db.backref('students', lazy='dynamic'))
+
     def save(self):
         db.session.add(self)
         db.session.commit()
@@ -35,6 +38,7 @@ class User(db.Model):
         return f"<User {self.name} ({self.email}) - {self.role}>"
 
 
+
 class Course(db.Model):
     __tablename__ = 'courses'
 
@@ -48,8 +52,12 @@ class Course(db.Model):
 
     lecturer = db.relationship('User', backref=db.backref('courses', lazy=True))
 
+    # Many-to-many relationship with users via the enrollments table
+    students = db.relationship('User', secondary='enrollments', backref=db.backref('courses', lazy='dynamic'))
+
     def __repr__(self):
         return f"<Course {self.name} - {self.code}>"
+
 
 
 class Assignment(db.Model):
@@ -170,3 +178,16 @@ class ChatMessage(db.Model):
             'course': self.course.name if self.course else None,
             'material': self.material.title if self.material else None
         }
+
+class Enrollment(db.Model):
+    __tablename__ = 'enrollments'
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    course_id = db.Column(db.Integer, db.ForeignKey('courses.id'), nullable=False)
+
+    user = db.relationship('User', backref=db.backref('enrollments', lazy=True))
+    course = db.relationship('Course', backref=db.backref('enrollments', lazy=True))
+
+    def __repr__(self):
+        return f"<Enrollment User: {self.user.name} - Course: {self.course.name}>"
