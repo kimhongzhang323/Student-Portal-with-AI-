@@ -1,6 +1,6 @@
 # Django React Integration Project
 
-This project is a Django web application that integrates with React for the frontend and PostgreSQL for database management.
+This project is a Flask web application that integrates with React for the frontend and PostgreSQL for database management.
 
 ## Table of Contents
 
